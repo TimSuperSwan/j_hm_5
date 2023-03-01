@@ -14,13 +14,20 @@ public class Task1 {
         System.out.println(phoneBook);
         System.out.println();
         
-        //делаем хэшмэп в хэшмепе, значением выступает другой хэшмеп
+        //______________делаем хэшмэп в хэшмепе, значением выступает другой хэшмеп
         HashMap<String, HashMap<String, Integer>> fullPhoneBook = new HashMap<String, HashMap<String, Integer>>();
         HashMap<String, Integer> lebedevPhones = new HashMap<String, Integer>();
 
         lebedevPhones.put("Mobile", 895214744);
         lebedevPhones.put("home",7895263);
         fullPhoneBook.put("Lebedev", lebedevPhones);
+
+        HashMap<String,Integer> kurochkinsPhones = new HashMap<>();//создали мэп для курочкина
+        fullPhoneBook.put("Kurochkin", kurochkinsPhones); // вложили в справочник
+
+        fullPhoneBook.get("Kurochkin").put("home", 8878844); // добавили курочкину телефон
+
+        
 
         HashMap<String, Integer> ZaitcevPhones = new HashMap<String, Integer>();
         ZaitcevPhones.put("Mobile", 9985774);
@@ -32,6 +39,8 @@ public class Task1 {
 
         // создали отдельный класс и значением является список экземпляров этого класса (содержат тип телефона и номер)
         HashMap<String,List<PhoneWithLabel>> phonesTypesMap = new HashMap<>();
+
+        
         
         List<PhoneWithLabel> VasilievsNumbers = new ArrayList<>();
         VasilievsNumbers.add(new PhoneWithLabel(785654, "homephone"));
